@@ -177,7 +177,6 @@ ServerName localhost
 
 *Σημείωση: Σιγουρευτείτε ότι έχετε PHP έκδοση 8.0.13 και MySQL 8.0.27 για την σωστή λειτουργία της εφαρμογής!! Δείτε έδω: [phpMyAdmin](http://localhost/phpmyadmin/)*
 
-<br><br/>
 ## Άδεια
 
 [MIT](https://choosealicense.com/licenses/mit/)
