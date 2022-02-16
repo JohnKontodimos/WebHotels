@@ -31,7 +31,7 @@
 
 **Client:** HTML, CSS, JavaScript
 
-**Server:** XAMPP, WAMP, Apache, MySQL, PHP
+**Server:** XAMPP, WAMP, Apache, MySQL 8.0.27, PHP 8.0.13
 
 ## Λειτουργίες
 
