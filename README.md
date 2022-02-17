@@ -151,7 +151,7 @@ xdebug.log="c:/wamp64/logs/xdebug.log"
 xdebug.log_level=7
 ```
 
-Με αυτό εδώ:
+Με αυτό εδώ (Ουσιαστικά βάλτε το ; μπροστά απο τις αντίστοιχες γραμμές στην περίπτωσή σας.):
 ```
 ; XDEBUG Extension
 ; [xdebug]
