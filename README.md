@@ -130,6 +130,42 @@ ServerName localhost
 *Σημείωση: Σε αντίθεση με το XAMPP εδώ δε χρειάζεται να αλλάξουμε τίποτα, το αντιγράφουμε ως έχει παραπάνω.*
 <br></br>
 
+#### Απενεργοποίηση του XDEBUG Extension
+
+Το XDEBUG Extension μας δείχνει warnings σχετικά με τον κώδικά μας. Όμως στην προκειμένη περίπτωση εμποδίζει την εμφάνιση του website μας καθώς μας δείχνει μυνήματα τα οποία δεν
+αφορούν την λειτουργικότητα του. Επομένως θα πρέπει να το απενεργοποιήσουμε για καλύτερη εμφάνιση αλλά και για καλύτερες επιδόσεις στην σελίδα μας.
+
+Εφόσον έχετε το WAMP ήδη ανοιχτό, κάντε αριστερό κλικ στο εικονίδιο στη γραμμή εργασιών και πάτε το ποντίκι στην PHP. Μετά κάντε κλικ στο php.ini (κάτω από Files & Documentation).
+Αυτό θα σας ανοίξει το αρχείο στον επιλεγμένο text editor σας που ορίσατε κατα την διάρκεια της εγκατάστασης του WAMP, έτσι ώστε να μπορεσετε να το επεξεργαστείτε. 
+
+Αντικαθιστούμε το παρακάτω (στο τέλος του αρχείου php.ini)
+```
+XDEBUG Extension
+[xdebug]
+zend_extension="c:/wamp64/bin/php/php8.0.13/zend_ext/php_xdebug-3.1.1-8.0-vs16-x86_64.dll"
+xdebug.mode allowed are : off develop coverage debug gcstats profile trace
+xdebug.mode =develop
+xdebug.output_dir ="c:/wamp64/tmp"
+xdebug.show_local_vars=0
+xdebug.log="c:/wamp64/logs/xdebug.log"
+xdebug.log_level=7
+```
+
+Με αυτό εδώ:
+```
+; XDEBUG Extension
+; [xdebug]
+; zend_extension="c:/wamp64/bin/php/php8.0.13/zend_ext/php_xdebug-3.1.1-8.0-vs16-x86_64.dll"
+; xdebug.mode allowed are : off develop coverage debug gcstats profile trace
+; xdebug.mode =develop
+; xdebug.output_dir ="c:/wamp64/tmp"
+; xdebug.show_local_vars=0
+; xdebug.log="c:/wamp64/logs/xdebug.log"
+; xdebug.log_level=7
+```
+
+Μετά επανακινήστε το WAMP.
+
 #### Εισαγωγή δεδομένων στο WAMP με phpMyAdmin
 
 Για να εισάγουμε δεδομένα στην MySQL του WAMP πρεπει να μεταβείτε στον εξής σύνδεσμο:
@@ -146,6 +182,8 @@ ServerName localhost
 
 Ανεξαρτήτως τι χρησιμοποιείτε είναι απαραίτητο να προσθέσετε στο αρχείο του λειτουργικού σας συστήματος  τις εξής εγγραφές:
 
+(π.χ. για Windows: C:\Windows\System32\drivers\etc\hosts)
+
 ```bash
 127.0.0.1 webhotels.gr
 ```
@@ -155,21 +193,12 @@ ServerName localhost
 
 Εφόσον ακολουθήσαμε τα παραπάνω βήματα τώρα μπορούμε να τρέξουμε το project τοπικά στον υπολογιστή μας.
 
-#### XAMPP
-Πηγαίνετε στον φάκελο htdocs (εκεί αποθηκεύει το XAMPP τα αρχεία των web apps).
-
-```bash
-  cd htdocs
-```
-#### WAMP
-Πηγαίνετε στον φάκελο www (εκεί αποθηκεύει το WAMP τα αρχεία των web apps) κάνοντας αριστερό κλίκ στο είκονίδιο του WAMP και έπειτα κάνετε κλίκ στην επιλογή **www directory**
-
-Κάντε clone το project με το terminal (εφόσον έχετε πάει στον αντίστοιχο φάκελο από παραπάνω)
+Κάντε clone το project με το terminal (σε ένα φάκελο της επιλογής σας)
 
 ```bash
   git clone https://github.com/JohnKontodimos/WebHotels
 ```
-Ή μπορείτε χειροκίνητα να αντιγράψετε τους φακέλους **webhotels.gr** μέσα στον φάκελο htdocs (για XAMPP) www (για WAMP) έφοσον κατεβάσατε τον κώδικα ως zip.
+Έπειτα χειροκίνητα αντιγράψτε τον φακέλο **webhotels.gr** μέσα στον φάκελο htdocs (για XAMPP) ή στον φάκελο www (για WAMP).
 
 Έπειτα μπορείτε να ανοίξετε το site στον browser σας με το link:
 
